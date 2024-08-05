@@ -1,7 +1,7 @@
 import {TPayment} from "../types";
 import {formatDate} from "./formatDate";
 
-export const calculatePaymentSchedule = (amount: number, annualRate: number, term: number): TPayment[] => {
+export const calculatePaymentsSchedule = (amount: number, annualRate: number, term: number): TPayment[] => {
   const monthlyRate = annualRate / 12 / 100;
   const totalPayments = term * 12;
   const monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
